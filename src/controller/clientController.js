@@ -12,14 +12,9 @@ module.exports = {
     },
 
     index(resquest, response){
-        connection.query('SELECT FROM client', function (err, result){
-            if(errr) throw err;
-            /*connection.on('error', function(err){
-                console.log("[mysql error]", err);
-            })*/
-            result.forEach(result => {
-                console.log(`${result.name}, ${result.Id}`);
-            })
-        });
+        connection.query("SELECT * FROM client", function (err, result) {
+            if (err) throw err;
+            return response.json(result);
+          });
     }
 };
