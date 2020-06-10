@@ -1,10 +1,7 @@
 const {Router} = require('express');
-
+const clientController = require('./controller/clientController')
 const routes = Router();
 
-routes.get('/client', (Resquest, Response) => {
-    console.log(Resquest.body);
-    return Response.send('Hello world');
-});
+routes.get('/client', clientController.store);
 
 module.exports = routes;
