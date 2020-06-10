@@ -1,6 +1,6 @@
 const connection = require('../models/connection')
 module.exports = {
-    async store(request, response) {
+    store(request, response) {
       
         const {name} = request.body;
 
@@ -8,8 +8,18 @@ module.exports = {
             if (err) throw err;
             console.log("client successfully registered");
         });
-        return response.send({name});
+        return response.json("client successfully registered");
+    },
 
-        
+    index(resquest, response){
+        connection.query('SELECT FROM client', function (err, result){
+            if(errr) throw err;
+            /*connection.on('error', function(err){
+                console.log("[mysql error]", err);
+            })*/
+            result.forEach(result => {
+                console.log(`${result.name}, ${result.Id}`);
+            })
+        });
     }
 };
