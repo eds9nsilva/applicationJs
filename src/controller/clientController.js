@@ -4,12 +4,10 @@ const { destroy } = require('../models/connection');
 
 module.exports = {
     store(request, response) {
-
         const { name } = request.body;
-
         connection.query(`INSERT INTO client SET ?`, { name }, function (err, result) {
             if (err) throw err;
-            return response.json("client successfully registered");
+            return response.json({ "Message": "client successfully registered" });
         });
     },
 
@@ -33,16 +31,16 @@ module.exports = {
 
         connection.query(`UPDATE client SET name = ? WHERE id = ?`, [name, Id], function (err, result) {
             if (err) throw err;
-            return response.json({"Message":"Sucesso"});
+            return response.json({ "Message": "success" });
         })
 
     },
 
-    destroy(request, response){
+    destroy(request, response) {
         const Id = request.headers.id;
-        connection.query("DELETE  FROM client WHERE Id = ?", Id, function(err,result){
-            if(err) throw err;
-            return response.json({"Message":"successfully deleted"});
+        connection.query("DELETE  FROM client WHERE Id = ?", Id, function (err, result) {
+            if (err) response.json(err);
+            return response.json({ "Message": "successfully deleted" });
         })
     }
 };
