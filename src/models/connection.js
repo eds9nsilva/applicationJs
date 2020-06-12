@@ -6,12 +6,10 @@ const con = mysql.createConnection({
   password: "",
   database: "client"
 });
-
 con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-  
-});
+  if (err) throw err;
+  console.log("Connected!");
 
+});
 
 module.exports = con;
