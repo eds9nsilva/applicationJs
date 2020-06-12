@@ -9,9 +9,8 @@ module.exports = {
 
         connection.query(`INSERT INTO client SET ?`, { name }, function (err, result) {
             if (err) throw err;
-            console.log("client successfully registered");
+            return response.json("client successfully registered");
         });
-        return response.json("client successfully registered");
     },
 
     index(resquest, response) {
@@ -34,7 +33,7 @@ module.exports = {
 
         connection.query(`UPDATE client SET name = ? WHERE id = ?`, [name, Id], function (err, result) {
             if (err) throw err;
-            return response.json("Sucesso");
+            return response.json({"Message":"Sucesso"});
         })
 
     },
@@ -43,7 +42,7 @@ module.exports = {
         const Id = request.headers.id;
         connection.query("DELETE  FROM client WHERE Id = ?", Id, function(err,result){
             if(err) throw err;
-            return response.json("Delete sucesso");
+            return response.json({"Message":"successfully deleted"});
         })
     }
 };
