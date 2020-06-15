@@ -9,7 +9,7 @@ A ideia é criar um Crud simples com banco de dados MYSQL, usando NodsJs, padrã
 [Express](https://expressjs.com/pt-br/) -- O Express é um framework para aplicativo da web do Node.js <br>
 [Nodemon](https://nodemon.io/) -- O Nodemon é um utilitário que monitora qualquer alteração na sua fonte e reinicia automaticamente o servidor.
 [Mysql](https://www.mysql.com/) -- O MySQL é um sistema de gerenciamento de banco de dados, que utiliza a linguagem SQL como interface.
-[Yarn] (https://yarnpkg.com/) -- O Yarn é um gerenciador de pacotes que também funciona como gerente de projetos.
+[Yarn](https://yarnpkg.com/) -- O Yarn é um gerenciador de pacotes que também funciona como gerente de projetos.
 
 
 ## Instalação :wrench:
