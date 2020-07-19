@@ -26,7 +26,7 @@ yarn add express
 yarn add nodemon
 
 ```
-*Adicioando o MyqSql*
+*Adicionando o MyqSql*
 ```
 
 yarn add mysql
